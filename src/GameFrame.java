@@ -202,13 +202,24 @@ public class GameFrame extends JPanel implements ActionListener, MouseMotionList
         if(ball.positionY >= HEIGHT || ball.positionY <= 0){
             ball.directionY *= -1;
         }
-        if(((ball.positionX - (UNIT_SIZE/2) <= humanPanelPaddle.getX() + 1) && (((ball.positionY >= humanPanelPaddle.getY()) && (ball.positionY <= humanPanelPaddle.getY() + PADDLE_HEIGHT))) && ((ball.positionY + UNIT_SIZE/2 >= humanPanelPaddle.getY()) || (ball.positionY - UNIT_SIZE/2 <= humanPanelPaddle.getY() + PADDLE_HEIGHT)))){
-            ball.directionX *= -1;
-        }
-//        if(){
+//        if(((ball.positionX - (UNIT_SIZE/2) <= humanPanelPaddle.getX() + 1) && (((ball.positionY >= humanPanelPaddle.getY()) && (ball.positionY <= humanPanelPaddle.getY() + PADDLE_HEIGHT))) && ((ball.positionY + UNIT_SIZE/2 >= humanPanelPaddle.getY()) || (ball.positionY - UNIT_SIZE/2 <= humanPanelPaddle.getY() + PADDLE_HEIGHT)))){
 //            ball.directionX *= -1;
 //        }
-        if(((ball.positionX + (UNIT_SIZE/2) >= computerPanelPaddle.getX() - 1) && ((ball.positionY >= computerPanelPaddle.getY()) && (ball.positionY <= computerPanelPaddle.getY() + PADDLE_HEIGHT))) && (((ball.positionY + UNIT_SIZE/2) >= computerPanelPaddle.getY()) || ((ball.positionY - UNIT_SIZE/2) <= computerPanelPaddle.getY() + PADDLE_HEIGHT))) {
+////        if(){
+////            ball.directionX *= -1;
+////        }
+//        if(((ball.positionX + (UNIT_SIZE/2) >= computerPanelPaddle.getX() - 1) && ((ball.positionY >= computerPanelPaddle.getY()) && (ball.positionY <= computerPanelPaddle.getY() + PADDLE_HEIGHT))) && (((ball.positionY + UNIT_SIZE/2) >= computerPanelPaddle.getY()) || ((ball.positionY - UNIT_SIZE/2) <= computerPanelPaddle.getY() + PADDLE_HEIGHT))) {
+//            ball.directionX *= -1;
+//        }
+        if (ball.positionX - UNIT_SIZE / 2 <= humanPanelPaddle.getX() + 1 &&
+                ball.positionY + UNIT_SIZE / 2 >= humanPanelPaddle.getY() &&
+                ball.positionY - UNIT_SIZE / 2 <= humanPanelPaddle.getY() + PADDLE_HEIGHT) {
+            ball.directionX *= -1;
+        }
+
+        if (ball.positionX + UNIT_SIZE / 2 >= computerPanelPaddle.getX() - 1 &&
+                ball.positionY + UNIT_SIZE / 2 >= computerPanelPaddle.getY() &&
+                ball.positionY - UNIT_SIZE / 2 <= computerPanelPaddle.getY() + PADDLE_HEIGHT) {
             ball.directionX *= -1;
         }
 //        if(){
